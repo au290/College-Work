@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BOOTSTRAP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"/>
+    <style>
+    *,
+    body {list-style: none; text-decoration: none; box-sizing: border-box;}
+    .header {height: 90px; background-color: #d2b48c;}
+    .logo {font-weight: 700; color: #8b4513;}
+    .list {text-decoration: none; font-weight: 600;}
+    h1 {font-weight: 700; color: #8b4513;}
+    h2 {font-weight: 700; color: #8b4513;}
+    .desc {font-weight: 400; letter-spacing: 3px; color: #4b3621;}
+    p {font-weight: 400; color: #4b3621;}
+    .active1 {border: solid 1px #8b4513; border-radius: 8px; background-color: #deb887;}
+    .carousel {height: 55vh;}
+    .active2 {border: solid 1px #8b4513; border-radius: 20px; background-color: #deb887;}
+    .bottom {height: 350px; background-color: #f5f5dc;}
+    .borders div {z-index: 999; pointer-events: none; background-color: transparent; border-color: #8b4513; border-style: solid; height: 90px; position: fixed; width: 90px;}
+    .brTR {border-width: 15px 15px 0 0; right: 0; top: 0;}
+    .brTL {border-width: 15px 0 0 15px; top: 0; left: 0;}
+    .brBL {border-width: 0 0 15px 15px; bottom: 0; left: 0;}
+    .brBR {border-width: 0 15px 15px 0; bottom: 0; right: 0;}
+    .icon {color: #8b4513; font-size: 1.7rem;}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <div class="row header" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >
+      <div class="col-4 d-flex justify-content-center align-items-center">
+        <h1 class="text-center logo">LPhotography</h1>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-6 d-flex align-items-center justify-content-center">
+        <nav>
+          <ul class="d-flex mt-3">
+            <li><a class="px-4 py-2 list text-dark active1" href="">HOME</a></li>
+            <li><a class="px-4 py-2 list text-dark" href="">ABOUT ME</a></li>
+            <li><a class="px-4 py-2 list text-dark" href="">PORTFOLIO</a></li>
+            <li><a class="px-4 py-2 list text-dark" href="">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="row carousel">
+      <div class="col d-flex flex-column justify-content-center align-items-center" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <h1>Hi! Hello, I'm LShinyJames...!</h1>
+        <h2>I Travel Around The World To Spread My Photos..!</h2>
+        <p class="desc">AWARD WINNING PHOTOGRAPHER / CINEMATOGRAPHER / WRITER</p>
+      </div>
+    </div>
+    <section class="borders">
+      <div class="brTR"></div>
+      <div class="brTL"></div>
+      <div class="brBL"></div>
+      <div class="brBR"></div>
+    </section>
+    <div class="row container-fluid">
+      <div class="col d-flex align-items-center justify-content-center">
+        <ul class="d-flex mt-3" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <li><a class="px-4 py-2 list text-dark active2" href="">All</a></li>
+          <li><a class="px-4 py-2 list text-dark" href="">Landscape</a></li>
+          <li><a class="px-4 py-2 list text-dark" href="">Potrait</a></li>
+          <li><a class="px-4 py-2 list text-dark" href="">Product</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center mb-4">
+      <div class="col d-flex align-items-center justify-content-center">
+        <div class="row">
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center mb-4">
+      <div class="col d-flex align-items-center justify-content-center">
+        <div class="row">
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center mb-4">
+      <div class="col d-flex align-items-center justify-content-center">
+        <div class="row">
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center mb-4">
+      <div class="col d-flex align-items-center justify-content-center">
+        <div class="row">
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+          <div class="col-3"><img src="gambar.gif" width="300"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom">
+      <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h1 class="logo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">IPhotography</h1>
+        <p>&copy; Copyrights 2023. All Rights Reserved</p>
+        <div class="icon">
+          <i class="fa-brands fa-dribbble pe-5"></i>
+          <i class="fa-brands fa-behance pe-5"></i>
+          <i class="fa-brands fa-instagram pe-5"></i>
+          <i class="fa-brands fa-500px pe-5"></i>
+          <i class="fa-brands fa-flickr pe-5"></i>
+          <i class="fa-brands fa-square-facebook pe-5"></i>
+          <i class="fa-brands fa-twitter pe-5"></i>
+        </div>
+      </div> 
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" ></script>
+</body>
+</html>

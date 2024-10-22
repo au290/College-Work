@@ -18,9 +18,7 @@ public class Pegawai {
     }
     //pada baris ini juga ada kesalahan dimana setjabatan tidak memasukan String jabatan kedalamnya sehingga tidak ada yang di set
     //public void setJabatan() {
-        public void setJabatan(String jabatan) {
-        //Pada baris ini terjadi error karena j != jabatan
-        //this.jabatan = j;
-        this.jabatan = jabatan;
+        public void setJabatan(String j) {
+        this.jabatan = j;
     }
  }

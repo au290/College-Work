@@ -1,0 +1,144 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".MainActivity">
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#6804ec"
+            android:padding="20dp"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:hint="@string/label"
+            app:helperTextEnabled="true"
+            app:helperText="@string/helper_text"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:layout_constraintTop_toBottomOf="@id/headerTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/radiobutton_group"
+            android:checkedButton="@+id/enabled_selected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.95"
+            app:layout_constraintTop_toBottomOf="@+id/textField"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioButton
+                android:id="@+id/option1"
+                android:checked="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:enabled="true"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/radiobutton_text1"
+                android:tag="0.20"/>
+            <RadioButton
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checked="false"
+                android:enabled="true"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/radiobutton_text2"
+                android:tag="0.18"/>
+            <RadioButton
+                android:id="@+id/option3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checked="false"
+                android:enabled="true"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/radiobutton_text3"
+                android:tag="0.15"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tipLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label_1"
+            android:gravity="start"
+            android:textSize="14dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radiobutton_group"
+            app:layout_constraintBottom_toBottomOf="@id/tipround"
+            app:layout_constraintEnd_toStartOf="@id/tipround"
+            android:paddingStart="10dp"/>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/tipround"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingRight="10dp"
+            app:layout_constraintBottom_toTopOf="@id/filledButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radiobutton_group" />
+
+        <Button
+            android:backgroundTint="#6804ec"
+            android:id="@+id/filledButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_text"
+            app:layout_constraintWidth_percent="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tipround" />
+
+        <TextView
+            android:id="@+id/result_text"
+            android:layout_width="150dp"
+            android:layout_height="33dp"
+            android:textSize="12dp"
+            android:layout_marginTop="8dp"
+            android:paddingEnd="10dp"
+            android:gravity="right"
+            android:text="@string/result_text"
+            app:layout_constraintTop_toBottomOf="@+id/filledButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textFontWeight="600"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

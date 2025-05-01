@@ -1,0 +1,7 @@
+<resources>
+    <string name="name">Damar Jati Suryo Laksono</string>
+    <string name="content">Information Technology Student\nUniversitas Lambung Mangkurat\nIPK: 3.8</string>
+    <string name="app_name">MyBiografi</string>
+    <string name="button">Liat Detail</string>
+    <string name="yapping_guweh">Halo semua, perkenalkan saya Damarjati, seorang mahasiswa dari Prodi Teknologi Informasi angkatan 2023 di Universitas Lambung Mangkurat.\n\nSaya sedang tertarik di bidang:\n• Mobile Development\n• Machine Learning\n\nProject yang pernah saya kerjakan:\n• Model Machine Learning sederhana untuk memprediksi jumlah penumpang yang mungkin selamat pada Titanic (Akurasi: 78.47%)\n• Model klasifikasi sederhana untuk mendeteksi kemungkinan seseorang mengalami depresi (Akurasi: 93.9%)\n• Aplikasi mobile untuk melihat detail informasi perubahan kurs secara realtime.</string>
+</resources>

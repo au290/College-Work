@@ -17,7 +17,6 @@
         android:textSize="20sp"
         tools:ignore="MissingConstraints" />
 
-    <!-- CardView centered in the screen with name, bio, and button -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardContainer"
         android:layout_width="0dp"

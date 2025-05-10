@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Owi Core</string>
+
+    <string-array name="data_name">
+        <item>YNTKTS</item>
+        <item>Hidup Jokowi</item>
+        <item>We Wok De Tok</item>
+        <item>Bua ha ha ha</item>
+        <item>Mulus buanget rek</item>
+    </string-array>
+
+    <string-array name="data_photo">
+        <item>@drawable/pakdhe_1</item>
+        <item>@drawable/hidup_jokowi</item>
+        <item>@drawable/wewokdetok</item>
+        <item>@drawable/kaget</item>
+        <item>@drawable/jalannyamulus</item>
+    </string-array>
+
+    <string-array name="data_link">
+        <item>https://www.tiktok.com/@anandalarassati3/video/7118706621026422043</item>
+        <item>https://www.tiktok.com/@yddontiktok/video/7499457221965745413</item>
+        <item>https://www.tiktok.com/@bimaratha/video/7440518047376379191</item>
+        <item>https://www.tiktok.com/@tma896/video/7089951158709570843</item>
+        <item>https://www.tiktok.com/@tntl.meme/video/7230355578571345179</item>
+    </string-array>
+
+    <string-array name="data_subtext">
+        <item>YO NDAK TAWU KOK TANYA SAYA</item>
+        <item>HIDUP JOKOWI!!!!!!</item>
+        <item>WE WOK DE TOK NOT ONLY TOK DE TOK</item>
+        <item>AAA KAGEET</item>
+        <item>MULUS REEEK JALANNYA</item>
+    </string-array>
+
+    <string-array name="data_detail">
+        <item>YO SAYA TIDAK TAWU TANYA BAPAK SAYA AJA SANA.</item>
+        <item>Hidup Mahasiswa Hidup Rakyat Indonesia, HIDUP JOKOWII 🗣🗣🗣🗣🗣🔥🔥🔥🔥🔥🔥🔥.</item>
+        <item>WI WOK DE TOK NOT ONLE WE TOK DE TOK TOK TOK TOK 😻😻😻😼😼😼😽😽😽😽🗣🗣🗣🗣🗣🔥🔥🔥🔥🔥🔥🔥.</item>
+        <item>MAMAAH AKU KAGET BANGET HUHUHUHUHU 😭😭😭😭😭😭😭😭😭😭😭😭😭.</item>
+        <item>THE JALAN IS SO MULUS WITHOUT ANY POTHOLE, THE JALAN IS VERY VERY VERY GUUUUUD</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

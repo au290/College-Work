@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title > Form </title>
+    </head>
+    <body>
+        <div id="Pala" style="border: 2px solid black ;   border: 5px solid gray; margin: 0 30% 0 30%; padding: 10px; text-align: center; background-color: #48b4db;">
+            <h1><font color="red">Pendaftaran Kursus</font></h1>       
+        </div>
+        <div id ="input_awal" style="border: 5px solid gray; margin: 0 30% 0 30%; padding: 10px; text-align: left; background-color: grey">
+            <form>
+        <table>
+            <tr>
+             </td><font type = arial black font size ="5"> Data Diri </font></td>
+            </tr>
+            <br><br>
+            <table>
+                <tr>
+                  <td>Nama </td>
+                  <td><input type="text" name="nama" value="" maxlength="9" size="18"></td>
+                </tr>
+                <tr>
+                  <td>Nim </td>
+                  <td><input type="text" name="nim" value="" maxlength="9" size="18"></td>
+                </tr>
+                <tr>
+                  <td>Email </td>
+                  <td><input type="email" name="email" value="" maxlength="9" size="18"></td>
+                </tr>
+                <tr>
+                  <td>Tempat Lahir </td>
+                  <td><input type="text" name="ttl" value="hh/bb/tttt" maxlength="9" size="9"></td>
+                </tr>
+                    <tr>
+                      <td>Jenis Kelamin</td>
+                      <td><input type="radio" name="jenis_kelamin" value="L"> Laki-laki</td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td><input type="radio" name="jenis_kelamin" value="P"> Perempuan</td>
+                    </tr>
+
+                    <tr>
+                      <td>Pilihan Program Kursus</td>
+                      <td><input type="checkbox" name="hobi_1" value="Menonton"> C# </td>
+                    </tr>      
+                    
+                    <tr>
+                        <td></td>
+                        <td><input type="checkbox" name="hobi_2" value="Game"> Java</td>
+                      </tr> 
+                
+                      <tr>
+                        <td></td>
+                        <td><input type="checkbox" name="hobi_3" value="Shopping"> SQL </td>
+                      </tr> 
+
+                      <tr>
+                        <td></td>
+                        <td><input type="checkbox" name="hobi_4" value="Mancing"> Html Dan Php</td>
+                      </tr> 
+                      </table>
+                    
+                        <tr>
+                          <td>Pilih Hari / Jam kursus </td>
+                          <td>
+                            <select name="Orientasi Minat" size="1">
+                              <option value="da">Senin-Rabu/09.00-11.00</option> 
+                              <option value="pj">Programmer Java</option> 
+                              <option value="sa">Sistem Analis</option> 
+                              <option value="ds">Dagelan Saja</option>
+                            </select>
+                          </td>
+                        </tr>
+                      
+                        
+                      </table>
+            </div>
+            <div class="komentar" style="border: 5px solid gray; margin: 0 30% 0 30%; padding: 10px; text-align: left; background-color: #ff707a">
+                <h3>Komentar Anda</h3>
+                <textarea id="komentar" name="komentar" rows="5" style="width: 80%;"></textarea>
+                <br><br>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+                <button type="button">Cancel</button>
+            </form>
+            </div>
+    </body>
+
+</html>

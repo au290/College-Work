@@ -1,7 +1,0 @@
-x=("#")
-print(x*29)
-print ("#                           #")
-print ("#  Damarjati Suryo Laksono  #")
-print ("#       2310817210014       #")
-print ("#                           #")
-print(x*29)

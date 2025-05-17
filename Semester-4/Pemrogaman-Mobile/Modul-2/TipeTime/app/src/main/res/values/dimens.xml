@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_start">16dp</dimen>
+    <dimen name="padding_vertical">8dp</dimen>
+    <!-- Add more dimension values as needed -->
+</resources>

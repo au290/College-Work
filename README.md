@@ -2,6 +2,11 @@
 
 Welcome to my repository! This project serves as an archive of my work during college, including assignments, exercises, and learning materials developed throughout my academic journey.
 
+## 👤 Introduction
+
+Hi! I'm Damarjati Suryo Laksono, a student at Lambung Mangkurat University, and this repository serves as an archive of my academic projects.  
+**NIM:** 2310817210014
+
 ## 🎓 About
 
 This repository contains various projects and modules completed as part of my coursework. It is intended for reference, learning, and personal documentation purposes.

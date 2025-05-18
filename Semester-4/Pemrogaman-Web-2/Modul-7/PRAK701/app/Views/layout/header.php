@@ -6,3 +6,4 @@
     <title>Crud Auth Demo</title>
 </head>
 <body>
+    <hr>

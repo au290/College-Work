@@ -19,4 +19,15 @@
             <?php endif; ?>
         </nav>
     </header>
+    <?php if (session()->getFlashdata('success')) : ?>
+        <div style="background-color: #d4edda; color: #155724; padding: 10px; margin: 10px 0;">
+            <?= session()->getFlashdata('success') ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('error')) : ?>
+        <div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin: 10px 0;">
+            <?= session()->getFlashdata('error') ?>
+        </div>
+    <?php endif; ?>
     <hr>

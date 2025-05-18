@@ -2,13 +2,6 @@
 <?= $this->section('content') ?>
 
 <h2>Hello From Login</h2>
-
-<?php if (session()->getFlashdata('error')) : ?>
-    <div style="color:red;">
-        <?= session()->getFlashdata('error') ?>
-    </div>
-<?php endif; ?>
-
 <form action="/login/process" method="post">
      <?= csrf_field() ?>
     <label for="username">Username</label>

@@ -4,8 +4,18 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return view('welcome_message');
+        return view('index');
+    }
+    
+    public function login()
+    {
+        return view('login');
+    }
+    
+    public function dashboard()
+    {
+        return view('dashboard');
     }
 }

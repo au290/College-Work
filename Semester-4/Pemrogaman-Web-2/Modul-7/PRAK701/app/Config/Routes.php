@@ -15,4 +15,4 @@ $routes->post('/login/process', 'Login::process', ['filter' => 'noauth']);
 
 // only authenticated user can access it
 $routes->get('/logout', 'Login::logout', ['filter' => 'auth']);
-$routes->get('/dashboard', 'Home::dashboard', ['filter' => 'auth']);
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);

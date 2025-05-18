@@ -59,7 +59,7 @@
 
 <!-- Add Book Modal -->
 <div class="modal fade" id="addBookModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"><i class="bi bi-plus-circle me-2"></i>Tambah Buku Baru</h5>
@@ -95,7 +95,7 @@
 
 <!-- Edit Book Modal -->
 <div class="modal fade" id="editBookModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"><i class="bi bi-pencil-square me-2"></i>Edit Buku</h5>

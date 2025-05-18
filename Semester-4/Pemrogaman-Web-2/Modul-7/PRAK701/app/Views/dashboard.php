@@ -1,166 +1,172 @@
-<?php
-// views/dashboard.php
-?>
 <?= $this->extend('layout/main.php') ?>
 <?= $this->section('content') ?>
 
-<h2>Hello From Dashboard</h2>
-
-<!-- Users Section -->
-<div class="users-section">
-    <h3>Users</h3>
-    <!-- User Create Form -->
-    <form action="/dashboard/create_user" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <button type="submit">Add User</button>
-    </form>
-    
-    <table border="1" cellpadding="10" cellspacing="0">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($user as $u): ?>
-            <tr>
-                <td><?= $u['id'] ?></td>
-                <td><?= $u['username'] ?></td>
-                <td><?= $u['email'] ?></td>
-                <td>
-                    <a href="/dashboard/edit_user/<?= $u['id'] ?>">Edit</a>
-                    <form action="/dashboard/delete_user/<?= $u['id'] ?>" method="post" style="display:inline;">
-                        <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+<div class="card shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0"><i class="bi bi-book me-2"></i>Daftar Buku</h5>
+        <button id="addBookBtn" class="btn btn-primary">
+            <i class="bi bi-plus-circle me-1"></i>Tambah Buku Baru
+        </button>
+    </div>
+    <div class="card-body">
+        <?php if (!empty($buku)): ?>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Judul</th>
+                            <th>Penulis</th>
+                            <th>Penerbit</th>
+                            <th>Tahun Terbit</th>
+                            <th class="text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($buku as $book): ?>
+                            <tr>
+                                <td><?= esc($book['judul']) ?></td>
+                                <td><?= esc($book['penulis']) ?></td>
+                                <td><?= esc($book['penerbit']) ?></td>
+                                <td><?= esc($book['tahun_terbit']) ?></td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary editBookBtn" 
+                                        data-id="<?= $book['id'] ?>" 
+                                        data-judul="<?= esc($book['judul']) ?>" 
+                                        data-penulis="<?= esc($book['penulis']) ?>" 
+                                        data-penerbit="<?= esc($book['penerbit']) ?>" 
+                                        data-tahun="<?= esc($book['tahun_terbit']) ?>">
+                                        <i class="bi bi-pencil-square"></i> Edit
+                                    </button>
+                                    
+                                    <form action="/dashboard/delete/<?= $book['id'] ?>" method="post" class="d-inline">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Yakin ingin menghapus?')">
+                                            <i class="bi bi-trash"></i> Hapus
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php else: ?>
+            <div class="alert alert-info">
+                <i class="bi bi-info-circle me-2"></i>Tidak ada data buku ditemukan.
+            </div>
+        <?php endif; ?>
+    </div>
 </div>
 
-<!-- Books Section -->
-<div class="books-section">
-    <h3>Books</h3>
-    <!-- Book Create Form -->
-    <form action="/dashboard/create_book" method="post">
-        <input type="text" name="judul" placeholder="Title" required>
-        <input type="text" name="penulis" placeholder="Author" required>
-        <input type="text" name="penerbit" placeholder="Publisher" required>
-        <input type="number" name="tahun_terbit" placeholder="Year" required>
-        <button type="submit">Add Book</button>
-    </form>
-    
-    <table border="1" cellpadding="10" cellspacing="0">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Publisher</th>
-                <th>Year</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($buku as $b): ?>
-            <tr>
-                <td><?= $b['id'] ?></td>
-                <td><?= $b['judul'] ?></td>
-                <td><?= $b['penulis'] ?></td>
-                <td><?= $b['penerbit'] ?></td>
-                <td><?= $b['tahun_terbit'] ?></td>
-                <td>
-                    <a href="/dashboard/edit_book/<?= $b['id'] ?>">Edit</a>
-                    <form action="/dashboard/delete_book/<?= $b['id'] ?>" method="post" style="display:inline;">
-                        <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+<!-- Add Book Modal -->
+<div class="modal fade" id="addBookModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-plus-circle me-2"></i>Tambah Buku Baru</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="addBookForm" action="/dashboard/create" method="post">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Judul</label>
+                        <input type="text" class="form-control" id="judul" name="judul" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="penulis" class="form-label">Penulis</label>
+                        <input type="text" class="form-control" id="penulis" name="penulis" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="penerbit" class="form-label">Penerbit</label>
+                        <input type="text" class="form-control" id="penerbit" name="penerbit" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tahun_terbit" class="form-label">Tahun Terbit</label>
+                        <input type="number" class="form-control" id="tahun_terbit" name="tahun_terbit" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Tambah Buku</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
-<!-- Edit User Modal (hidden by default) -->
-<div id="editUserModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:20px; border:1px solid #000;">
-    <h3>Edit User</h3>
-    <form id="editUserForm" method="post">
-        <input type="hidden" name="id" id="editUserId">
-        <input type="text" name="username" id="editUserUsername" required>
-        <input type="email" name="email" id="editUserEmail" required>
-        <button type="submit">Update</button>
-        <button type="button" onclick="document.getElementById('editUserModal').style.display='none'">Cancel</button>
-    </form>
-</div>
-
-<!-- Edit Book Modal (hidden by default) -->
-<div id="editBookModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:20px; border:1px solid #000;">
-    <h3>Edit Book</h3>
-    <form id="editBookForm" method="post">
-        <input type="hidden" name="id" id="editBookId">
-        <input type="text" name="judul" id="editBookJudul" required>
-        <input type="text" name="penulis" id="editBookPenulis" required>
-        <input type="text" name="penerbit" id="editBookPenerbit" required>
-        <input type="number" name="tahun_terbit" id="editBookTahun" required>
-        <button type="submit">Update</button>
-        <button type="button" onclick="document.getElementById('editBookModal').style.display='none'">Cancel</button>
-    </form>
+<!-- Edit Book Modal -->
+<div class="modal fade" id="editBookModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-pencil-square me-2"></i>Edit Buku</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="editBookForm" method="post">
+                <div class="modal-body">
+                    <input type="hidden" name="id" id="editId">
+                    <div class="mb-3">
+                        <label for="editJudul" class="form-label">Judul</label>
+                        <input type="text" class="form-control" id="editJudul" name="judul" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPenulis" class="form-label">Penulis</label>
+                        <input type="text" class="form-control" id="editPenulis" name="penulis" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPenerbit" class="form-label">Penerbit</label>
+                        <input type="text" class="form-control" id="editPenerbit" name="penerbit" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editTahun" class="form-label">Tahun Terbit</label>
+                        <input type="number" class="form-control" id="editTahun" name="tahun_terbit" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Update Buku</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <script>
-// Function to show edit user modal and populate form
-function showEditUserModal(id, username, email) {
-    document.getElementById('editUserId').value = id;
-    document.getElementById('editUserUsername').value = username;
-    document.getElementById('editUserEmail').value = email;
-    document.getElementById('editUserForm').action = '/dashboard/update_user';
-    document.getElementById('editUserModal').style.display = 'block';
-}
-
-// Function to show edit book modal and populate form
-function showEditBookModal(id, judul, penulis, penerbit, tahun_terbit) {
-    document.getElementById('editBookId').value = id;
-    document.getElementById('editBookJudul').value = judul;
-    document.getElementById('editBookPenulis').value = penulis;
-    document.getElementById('editBookPenerbit').value = penerbit;
-    document.getElementById('editBookTahun').value = tahun_terbit;
-    document.getElementById('editBookForm').action = '/dashboard/update_book';
-    document.getElementById('editBookModal').style.display = 'block';
-}
-
-// Attach click handlers to edit links
-document.addEventListener('DOMContentLoaded', function() {
-    const userEditLinks = document.querySelectorAll('a[href^="/dashboard/edit_user"]');
-    userEditLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const id = this.getAttribute('href').split('/').pop();
-            const row = this.closest('tr');
-            const username = row.querySelector('td:nth-child(2)').textContent;
-            const email = row.querySelector('td:nth-child(3)').textContent;
-            showEditUserModal(id, username, email);
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add Book Modal
+        const addBookBtn = document.getElementById('addBookBtn');
+        const addBookModalEl = document.getElementById('addBookModal');
+        
+        addBookBtn.addEventListener('click', () => {
+            const addBookModal = new bootstrap.Modal(addBookModalEl);
+            addBookModal.show();
+        });
+        
+        // Edit Book Modal
+        const editBookModalEl = document.getElementById('editBookModal');
+        const editBookForm = document.getElementById('editBookForm');
+        
+        document.querySelectorAll('.editBookBtn').forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const judul = button.getAttribute('data-judul');
+                const penulis = button.getAttribute('data-penulis');
+                const penerbit = button.getAttribute('data-penerbit');
+                const tahun = button.getAttribute('data-tahun');
+                
+                document.getElementById('editId').value = id;
+                document.getElementById('editJudul').value = judul;
+                document.getElementById('editPenulis').value = penulis;
+                document.getElementById('editPenerbit').value = penerbit;
+                document.getElementById('editTahun').value = tahun;
+                
+                editBookForm.action = `/dashboard/update/${id}`;
+                
+                const editBookModal = new bootstrap.Modal(editBookModalEl);
+                editBookModal.show();
+            });
         });
     });
-
-    const bookEditLinks = document.querySelectorAll('a[href^="/dashboard/edit_book"]');
-    bookEditLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const id = this.getAttribute('href').split('/').pop();
-            const row = this.closest('tr');
-            const judul = row.querySelector('td:nth-child(2)').textContent;
-            const penulis = row.querySelector('td:nth-child(3)').textContent;
-            const penerbit = row.querySelector('td:nth-child(4)').textContent;
-            const tahun_terbit = row.querySelector('td:nth-child(5)').textContent;
-            showEditBookModal(id, judul, penulis, penerbit, tahun_terbit);
-        });
-    });
-});
 </script>
 
-<?= $this->endsection() ?>
+<?= $this->endSection() ?>

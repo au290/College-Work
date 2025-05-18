@@ -1,6 +1,6 @@
 <?= $this->include('layout/header') ?>
 
-<main>
+<main class="py-4">
     <?= $this->renderSection('content') ?>
 </main>
 

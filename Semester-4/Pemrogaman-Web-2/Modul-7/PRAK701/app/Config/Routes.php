@@ -15,4 +15,14 @@ $routes->post('/login/process', 'Login::process', ['filter' => 'noauth']);
 
 // only authenticated user can access it
 $routes->get('/logout', 'Login::logout', ['filter' => 'auth']);
-$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
+$routes->group('dashboard', ['filter' => 'auth'], function($routes) {
+    $routes->get('/', 'Dashboard::index');
+    $routes->post('create_user', 'Dashboard::create_user');
+    $routes->get('edit_user/(:num)', 'Dashboard::edit_user/$1');
+    $routes->post('update_user', 'Dashboard::update_user');
+    $routes->post('delete_user/(:num)', 'Dashboard::delete_user/$1');
+    $routes->post('create_book', 'Dashboard::create_book');
+    $routes->get('edit_book/(:num)', 'Dashboard::edit_book/$1');
+    $routes->post('update_book', 'Dashboard::update_book');
+    $routes->post('delete_book/(:num)', 'Dashboard::delete_book/$1');
+});

@@ -5,6 +5,14 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+
+// all user can acces it
 $routes->get('/', 'Home::index');
-$routes->get('/login', 'Home::login');
-$routes->get('/dashboard', 'Home::dashboard');
+
+// only non-authenticated user can access it 
+$routes->get('/login', 'Login::index', ['filter' => 'noauth']);
+$routes->post('/login/process', 'Login::process', ['filter' => 'noauth']);
+
+// only authenticated user can access it
+$routes->get('/logout', 'Login::logout', ['filter' => 'auth']);
+$routes->get('/dashboard', 'Home::dashboard', ['filter' => 'auth']);

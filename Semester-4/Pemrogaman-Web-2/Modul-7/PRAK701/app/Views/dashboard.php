@@ -14,6 +14,7 @@
                 <table class="table table-hover table-striped">
                     <thead class="table-light">
                         <tr>
+                            <th>ID</th>
                             <th>Judul</th>
                             <th>Penulis</th>
                             <th>Penerbit</th>
@@ -24,6 +25,7 @@
                     <tbody>
                         <?php foreach ($buku as $book): ?>
                             <tr>
+                                <td><?= esc($book['id']) ?></td>
                                 <td><?= esc($book['judul']) ?></td>
                                 <td><?= esc($book['penulis']) ?></td>
                                 <td><?= esc($book['penerbit']) ?></td>

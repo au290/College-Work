@@ -10,6 +10,7 @@
 <?php endif; ?>
 
 <form action="/login/process" method="post">
+     <?= csrf_field() ?>
     <label for="username">Username</label>
     <input type="text" name="username" id="username" required>
     <br>

@@ -23,7 +23,7 @@ class Login extends BaseController
         // Load user model
         $model = new \App\Models\ModelUser();
 
-        // Hash password using md5 (matching your DB format)
+        // Hash password using md5 
         $hashedPassword = md5($password);
 
         // Search for user
@@ -41,7 +41,7 @@ class Login extends BaseController
                 'isLogged' => true,
             ]);
 
-            return redirect()->to('/dashboard'); // or wherever your main page is
+            return redirect()->to('/dashboard');
         } else {
             session()->setFlashdata('error', 'Username atau Password salah.');
             return redirect()->to('/login');

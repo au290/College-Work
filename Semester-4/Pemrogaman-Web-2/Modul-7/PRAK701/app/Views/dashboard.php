@@ -133,9 +133,8 @@
 </div>
 
 <script>
-    // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', function() {
-        // Add Book Modal
+    
         const addBookBtn = document.getElementById('addBookBtn');
         const addBookModalEl = document.getElementById('addBookModal');
         
@@ -144,7 +143,7 @@
             addBookModal.show();
         });
         
-        // Edit Book Modal
+
         const editBookModalEl = document.getElementById('editBookModal');
         const editBookForm = document.getElementById('editBookForm');
         

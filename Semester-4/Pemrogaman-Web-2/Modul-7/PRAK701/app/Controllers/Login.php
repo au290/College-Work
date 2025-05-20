@@ -14,26 +14,15 @@ class Login extends BaseController
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        // Validation: check empty fields
         if (empty($username) || empty($password)) {
             session()->setFlashdata('error', 'Username dan Password tidak boleh kosong.');
             return redirect()->to('/login');
         }
 
-        // Load user model
         $model = new \App\Models\ModelUser();
+        $user = $model->where('username', $username)->first();
 
-        // Hash password using md5 
-        $hashedPassword = md5($password);
-
-        // Search for user
-        $user = $model->where('username', $username)
-            ->where('password', $hashedPassword)
-            ->first();
-
-        // Check if user found
-        if ($user) {
-            // Set session
+        if ($user && password_verify($password, $user['password'])) {
             session()->set([
                 'user_id'   => $user['id'],
                 'username'  => $user['username'],

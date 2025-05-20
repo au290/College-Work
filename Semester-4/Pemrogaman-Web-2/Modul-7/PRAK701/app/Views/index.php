@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 <div class="container">
-    <!-- Hero Section -->
+
     <div class="hero-gradient p-5 mb-5 position-relative" id="hero-section">
         <div class="animated-shape" id="shape1"></div>
         <div class="animated-shape" id="shape2"></div>
@@ -29,8 +29,7 @@
             </div>
         </div>
     </div>
-    
-    <!-- Features Section -->
+
     <div class="row py-5" id="features-section">
         <div class="col-12 text-center mb-5">
             <h2 class="fw-bold" id="features-title">Features</h2>
@@ -73,8 +72,7 @@
             </div>
         </div>
     </div>
-    
-    <!-- Call to Action -->
+
     <div class="row py-5" id="cta-section">
         <div class="col-12">
             <div class="cta-section p-5 text-center position-relative">
@@ -225,7 +223,7 @@
             ease: "back.out(1.7)"
         }, "-=0.2");
         
-        // Hover animations for feature cards
+  
         document.querySelectorAll('.feature-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 gsap.to(this, {

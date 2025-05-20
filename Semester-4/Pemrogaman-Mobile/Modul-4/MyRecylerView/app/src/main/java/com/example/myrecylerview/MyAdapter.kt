@@ -6,10 +6,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myrecylerview.databinding.ItemLayoutBinding
 
 class MyAdapter(
-    private val listCharacter: ArrayList<MyData>,
     private val onYTClick: (String) -> Unit,
     private val onDetailClick: (String, Int, String) -> Unit
 ) : RecyclerView.Adapter<MyAdapter.ListViewHolder>() {
+
+    private val items = ArrayList<MyData>()
+
+    fun submitList(newList: List<MyData>) {
+        items.clear()
+        items.addAll(newList)
+        notifyDataSetChanged()
+    }
 
     class ListViewHolder(val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -18,10 +25,10 @@ class MyAdapter(
         return ListViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = listCharacter.size
+    override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, link, photo, detail, subtext) = listCharacter[position]
+        val (name, link, photo, detail, subtext) = items[position]
         with(holder.binding) {
             textTitle.text = name
             textDescription.text = subtext
@@ -31,3 +38,4 @@ class MyAdapter(
         }
     }
 }
+

@@ -10,5 +10,4 @@ data class MyData(
     val photo: Int,
     val detail: String,
     val subtext: String
-
 ):Parcelable

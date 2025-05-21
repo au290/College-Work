@@ -14,7 +14,6 @@ class UserSeeder extends Seeder
             'password' => password_hash('etmin123', PASSWORD_BCRYPT)
         ];
 
-        // Using Query Builder
         $this->db->table('user')->insertBatch($data);
     }
 }

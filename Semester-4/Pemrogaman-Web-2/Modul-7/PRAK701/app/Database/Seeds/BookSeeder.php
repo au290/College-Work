@@ -31,7 +31,6 @@ class BookSeeder extends Seeder
             ],
         ];
 
-        // Using Query Builder
         $this->db->table('buku')->insertBatch($data);
     }
 }

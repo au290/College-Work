@@ -84,7 +84,6 @@
             bottom: -75px;
             left: -75px;
         }
-        /* Navigation link hover and active indicator */
         .navbar-nav .nav-link {
             position: relative;
             padding-bottom: 0.5rem;

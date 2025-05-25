@@ -49,7 +49,6 @@ class MyFragment : Fragment() {
             setHasFixedSize(true)
         }
 
-        // Observe StateFlow
         lifecycleScope.launchWhenStarted {
             viewModel.characterList.collect { list ->
                 characterAdapter.submitList(list)
@@ -82,4 +81,3 @@ class MyFragment : Fragment() {
         _binding = null
     }
 }
-

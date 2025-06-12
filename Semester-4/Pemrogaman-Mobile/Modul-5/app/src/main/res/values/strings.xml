@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My API Test</string>
+    <!-- The following are needed by your layouts, so we'll keep them -->
+    <string name="character_image_description">Character Image</string>
+    <string name="details_button">Details</string>
+    <string name="view_profile_button">View Profile</string>
+    <string name="favorites_icon_description">Favorites</string>
+</resources>

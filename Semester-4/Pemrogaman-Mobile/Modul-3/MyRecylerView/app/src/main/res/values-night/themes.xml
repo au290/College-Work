@@ -11,7 +11,7 @@
 
     <!-- Splash screen theme -->
     <style name="Theme.MyApp.MySplash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_anim</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/tes</item>
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="duration">1000</item>
         <item name="postSplashScreenTheme">@style/Theme.MyRecylerView</item>

@@ -40,6 +40,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.circleimageview)
+    implementation(libs.lottie)
     implementation(libs.glide)
     kapt(libs.glide.compiler)
     implementation(libs.retrofit)

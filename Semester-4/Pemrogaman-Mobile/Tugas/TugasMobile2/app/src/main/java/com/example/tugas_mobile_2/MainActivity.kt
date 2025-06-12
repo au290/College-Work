@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
 
             lifecycleScope.launch {
                 try {
-                    val posts = RetrofitInstance.api.getMessage()
+                    val response = RetrofitInstance.api.getMessage()
+                    val posts = response.results
                     binding.recyclerView.adapter = MyAdapter(posts)
                 } catch (e: Exception) {
                     e.printStackTrace()

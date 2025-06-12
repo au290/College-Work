@@ -5,40 +5,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#0A0A0A"
     tools:context=".MainActivity">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/white"
-            android:elevation="4dp"
+            android:background="@drawable/toolbar_gradient_background"
+            android:elevation="8dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:title="Owi Core"
-            app:titleTextColor="@android:color/black"
-            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6">
+            app:title="Portal Gun Database"
+            app:titleTextColor="#00FF41"
+            app:titleTextAppearance="@style/RickAndMortyTitle">
 
                 <ImageView
                     android:id="@+id/btn_menu"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="end"
                     android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_more_vert"
-                    app:tint="@android:color/black" />
+                    android:src="@drawable/ic_portal_menu"
+                    android:background="@drawable/portal_button_background"
+                    android:padding="4dp"
+                    app:tint="#00FF41" />
         </com.google.android.material.appbar.MaterialToolbar>
+
+        <!-- Animated portal effect border -->
+        <View
+            android:id="@+id/portal_border"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@drawable/portal_border_animation"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:padding="8dp"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:padding="12dp"
+            android:background="#0A0A0A"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/portal_border"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Floating portal button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_portal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_portal"
+            app:backgroundTint="#00FF41"
+            app:tint="#000000"
+            app:elevation="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

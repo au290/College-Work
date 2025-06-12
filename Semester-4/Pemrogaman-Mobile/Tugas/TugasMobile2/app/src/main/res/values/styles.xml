@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RickAndMortyTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:fontFamily">@font/rick_and_morty_font</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+
+    <style name="PortalButton">
+        <item name="android:background">@drawable/portal_button_background</item>
+        <item name="android:textColor">@color/portal_green</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+</resources>

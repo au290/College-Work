@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/cardBackgroundColor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageViewCharacter"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars"
+            android:contentDescription="@string/character_image_description" />
+
+        <TextView
+            android:id="@+id/textViewCharacterName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/textColorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewCharacter"
+            app:layout_constraintTop_toTopOf="@id/imageViewCharacter"
+            tools:text="Character Name" />
+
+        <ImageView
+            android:id="@+id/iconFavorites"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_star_gold"
+            app:tint="@color/starColor"
+            app:layout_constraintStart_toStartOf="@id/textViewCharacterName"
+            app:layout_constraintTop_toBottomOf="@id/textViewCharacterName"
+            app:layout_constraintBottom_toBottomOf="@id/textViewFavorites"
+            android:contentDescription="@string/favorites_icon_description" />
+
+        <TextView
+            android:id="@+id/textViewFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/textColorSecondary"
+            app:layout_constraintTop_toTopOf="@id/iconFavorites"
+            app:layout_constraintStart_toEndOf="@id/iconFavorites"
+            tools:text="98,425" />
+
+        <TextView
+            android:id="@+id/textViewVoiceActors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="14sp"
+            android:textColor="@color/textColorSecondary"
+            app:layout_constraintTop_toBottomOf="@id/textViewFavorites"
+            app:layout_constraintStart_toStartOf="@id/textViewCharacterName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="JP: Voice Actor\nEN: Voice Actor" />
+
+        <Button
+            android:id="@+id/buttonDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/details_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewCharacter"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/buttonUrl"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/view_profile_button"
+            app:layout_constraintBaseline_toBaselineOf="@id/buttonDetail"
+            app:layout_constraintEnd_toStartOf="@id/buttonDetail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
